@@ -4,18 +4,6 @@ import java.org.clesniak.PracticeMain;
 
 public class VariablesTypesAndScope {
     int x,y,z;
-    public void main(String[] args) {
-        this.x = 0;
-        this.y = 0;
-        this.z = 0;
-
-    }
-    public void main(String[] args, int y1, int x1, int z1) {
-        this.x = x1;
-        this.y = y1;
-        this.z = z1;
-    }
-
     //Private variables only accessible in this class
     private int w = 0;
     //Public variables accessible from anywhere
@@ -23,7 +11,21 @@ public class VariablesTypesAndScope {
     //Protected variables accessible from classes of the same package and subclasses in any package
     protected boolean f = true;
 
-    public static void PrimitiveTypes() {
+    public VariablesTypesAndScope() {
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+
+    }
+
+    public VariablesTypesAndScope(int y1, int x1, int z1) {
+        this.x = x1;
+        this.y = y1;
+        this.z = z1;
+    }
+
+
+    public void primitiveTypes() {
         //single line
         /* multi
         line */
@@ -40,7 +42,7 @@ public class VariablesTypesAndScope {
 
     }
 
-    public static void NonPrimitiveTypes() {
+    public void nonPrimitiveTypes() {
         boolean isTrue = true;
         //Non-primitive types
         String stronk = "hello!";

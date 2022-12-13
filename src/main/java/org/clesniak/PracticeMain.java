@@ -8,11 +8,13 @@ public class PracticeMain {
     public static void main(String[] args) {
         VariablesTypesAndScope p = new VariablesTypesAndScope();
         ArraysListsAndLoops f = new ArraysListsAndLoops();
-        p.PrimitiveTypes();
-        p.NonPrimitiveTypes();
-        f.ArraysForLoopRefresher();
-        f.ForEachLoopRefresher();
-        f.WhileLoopRefresher();
+        p.primitiveTypes();
+        p.nonPrimitiveTypes();
+        f.arraysForLoopRefresher();
+        f.forEachLoopRefresher();
+        f.whileLoopRefresher();
+        f.iteratorRefresher();
+        f.java8StreamsForEach();
 
     }
 
