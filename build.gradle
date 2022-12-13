@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.clesniak'
+group 'java.org.clesniak.clesniak'
 version '1.0-SNAPSHOT'
 
 repositories {
