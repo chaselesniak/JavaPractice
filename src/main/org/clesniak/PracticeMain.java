@@ -1,8 +1,8 @@
-package org.clesniak;
+package java.org.clesniak;
 
 
-import org.clesniak.loops.ArraysListsAndLoops;
-import org.clesniak.variables.VariablesTypesAndScope;
+import java.org.clesniak.loops.ArraysListsAndLoops;
+import java.org.clesniak.variables.VariablesTypesAndScope;
 
 public class PracticeMain {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class PracticeMain {
         f.whileLoopRefresher();
         f.iteratorRefresher();
         f.java8StreamsForEach();
-        f.loop(5);
+
     }
 
     /**

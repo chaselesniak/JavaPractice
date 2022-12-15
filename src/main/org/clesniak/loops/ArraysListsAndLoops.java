@@ -1,9 +1,7 @@
-package org.clesniak.loops;
+package java.org.clesniak.loops;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ArraysListsAndLoops {
     public void arraysForLoopRefresher() {
@@ -60,11 +58,12 @@ public class ArraysListsAndLoops {
     }
 
     public void loop(int size) {
-        List<Integer> intList = new ArrayList<>(size);
+        List<Integer> intList = List.of(4,3,6,8,9,5,4,2,6,4);
         while(size-- != 0){
-            intList.add(size*2);
+            intList.set(size,size*2);
         }
-        List<String> stringList = intList.stream().map(Object::toString).toList();
+        List<String> stringList = List.of("","","","","","","","","","");
+        intList.stream().map((i) -> i.toString()).forEach((i) -> stringList.set(intList.indexOf(i),i));
         for (String i : stringList) {
             System.out.println(i);
         }

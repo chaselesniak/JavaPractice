@@ -1,6 +1,6 @@
-package org.clesniak.variables;
+package java.org.clesniak.variables;
 
-import org.clesniak.PracticeMain;
+import java.org.clesniak.PracticeMain;
 
 public class VariablesTypesAndScope {
     int x,y,z;
