@@ -3,6 +3,8 @@ package org.clesniak;
 
 import org.clesniak.decision.OperatorsAndDecision;
 import org.clesniak.loops.ArraysListsAndLoops;
+import org.clesniak.strings.StringsPractice;
+import org.clesniak.structure.*;
 import org.clesniak.variables.VariablesTypesAndScope;
 
 public class PracticeMain {
@@ -10,6 +12,7 @@ public class PracticeMain {
         VariablesTypesAndScope p = new VariablesTypesAndScope();
         ArraysListsAndLoops f = new ArraysListsAndLoops();
         OperatorsAndDecision o = new OperatorsAndDecision();
+        StringsPractice s = new StringsPractice();
         p.primitiveTypes();
         p.nonPrimitiveTypes();
         f.arraysForLoopRefresher();
@@ -28,6 +31,57 @@ public class PracticeMain {
         o.switchStatement(4);
         o.switchStatement(7);
         o.switchStatement(30);
+        o.stringsAndObjectsEqual("twas");
+        o.stringsAndObjectsEqual("was");
+        s.stringComparison("goal");
+        s.stringComparison("foal");
+        s.stringComparison("Goal");
+        s.stringComparison("Jones");
+        s.replace();
+
+
+        BaseClass base1 = new BaseClass();
+        BaseClass baseChild = new BaseChild();
+        BaseClass multiBase = new BaseMultiChild();
+        BaseChild child1 = new BaseChild();
+        BaseMultiChild multiChild = new BaseMultiChild();
+        FizzInterface baseInterface = new BaseClass();
+        FizzInterface childInterface = new BaseChild();
+        FizzInterface multiInterface = new BaseMultiChild();
+        JazzInterface jazzInterface = new BaseMultiChild();
+        BazzInterface bazzInterface = new BaseMultiChild();
+
+
+        System.out.println("Child Hierarchy Evaluation");
+        System.out.println("===========================");
+        System.out.println(base1.doFizz(1));            // will print "Baseclass Fizzes!"
+        System.out.println(baseChild.doFizz(1));        // will print "Child fizz" -newline- "Baseclass Fizzes"
+        System.out.println(child1.doFizz(1));           // will print "Child fizz" -newline- "Baseclass Fizzes"
+        System.out.println(baseInterface.doFizz(1));    // will print "Baseclass Fizzes!"
+        System.out.println(childInterface.doFizz(1));   // will print "Child fizz" -newline- "Baseclass Fizzes"
+        System.out.println(base1.doBuzz(1));            // will print "I did a buzz"
+        System.out.println(baseChild.doBuzz(1));        // will print "basechild Buzz"
+        System.out.println(child1.doBuzz(1));           // will print "basechild buzz"
+        System.out.println(baseInterface.doBuzz(1));    // will print "I did a buzz"
+        System.out.println(childInterface.doBuzz(1));   // "basechild buzz"
+
+        System.out.println("Implementing multiple Interfaces/Hierarchy");
+        System.out.println("===========================");
+        System.out.println(multiBase.doFizz(1));        //prints "Baseclass fizzes"
+        System.out.println(multiBase.doBuzz(1));        //prints "BaseMultiChild Buzz!"
+        System.out.println(multiChild.doBuzz(1));       //prints "BaseMultiChild Buzz!"
+        System.out.println(multiChild.doBazz());           //prints "BaseMultiChild Bazz!"
+        System.out.println(multiChild.doJazz());           //prints "BaseMultiChild Jazz!"
+        System.out.println(multiInterface.doBuzz(1));   //prints "BaseMultiChild Buzz!"
+        System.out.println(multiInterface.doFizz(1));   //prints "Baseclass Fizz!"
+        System.out.println(jazzInterface.doJazz());        //prints "BaseMultiChild jazz!"
+        System.out.println(bazzInterface.doBazz());        //prints "BaseMultiChild Bazz!"
+
+
+
+
+
+
 
     }
 

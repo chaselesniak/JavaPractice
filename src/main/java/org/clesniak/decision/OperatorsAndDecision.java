@@ -77,4 +77,15 @@ public class OperatorsAndDecision {
         }
 
     }
+
+    public void stringsAndObjectsEqual(String t){
+        String s = "was";
+        // .equals evaluates equivalency for objects and non-primitives
+        // == evaluates equivalency for primitives types
+        if(s.equals(t)){
+            System.out.println("Are equals");
+        }else{
+            System.out.println("Are not equals");
+        }
+    }
 }
