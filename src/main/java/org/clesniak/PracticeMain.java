@@ -2,6 +2,9 @@ package org.clesniak;
 
 
 import org.clesniak.decision.OperatorsAndDecision;
+import org.clesniak.generics.GenericMethod;
+import org.clesniak.generics.MultiContainer;
+import org.clesniak.generics.MyContainer;
 import org.clesniak.loops.ArraysListsAndLoops;
 import org.clesniak.strings.StringsPractice;
 import org.clesniak.structure.*;
@@ -63,20 +66,35 @@ public class PracticeMain {
         System.out.println(baseChild.doBuzz(1));        // will print "basechild Buzz"
         System.out.println(child1.doBuzz(1));           // will print "basechild buzz"
         System.out.println(baseInterface.doBuzz(1));    // will print "I did a buzz"
-        System.out.println(childInterface.doBuzz(1));   // "basechild buzz"
+        System.out.println(childInterface.doBuzz(1));   // will print "basechild buzz"
 
         System.out.println("Implementing multiple Interfaces/Hierarchy");
         System.out.println("===========================");
-        System.out.println(multiBase.doFizz(1));        //prints "Baseclass fizzes"
-        System.out.println(multiBase.doBuzz(1));        //prints "BaseMultiChild Buzz!"
-        System.out.println(multiChild.doBuzz(1));       //prints "BaseMultiChild Buzz!"
-        System.out.println(multiChild.doBazz());           //prints "BaseMultiChild Bazz!"
-        System.out.println(multiChild.doJazz());           //prints "BaseMultiChild Jazz!"
-        System.out.println(multiInterface.doBuzz(1));   //prints "BaseMultiChild Buzz!"
-        System.out.println(multiInterface.doFizz(1));   //prints "Baseclass Fizz!"
-        System.out.println(jazzInterface.doJazz());        //prints "BaseMultiChild jazz!"
-        System.out.println(bazzInterface.doBazz());        //prints "BaseMultiChild Bazz!"
+        System.out.println(multiBase.doFizz(1));        // will print "Baseclass fizzes"
+        System.out.println(multiBase.doBuzz(1));        // will print "BaseMultiChild Buzz!"
+        System.out.println(multiChild.doBuzz(1));       // will print "BaseMultiChild Buzz!"
+        System.out.println(multiChild.doBazz());           // will print "BaseMultiChild Bazz!"
+        System.out.println(multiChild.doJazz());           // will print "BaseMultiChild Jazz!"
+        System.out.println(multiInterface.doBuzz(1));   // will print "BaseMultiChild Buzz!"
+        System.out.println(multiInterface.doFizz(1));   // will print "Baseclass Fizz!"
+        System.out.println(jazzInterface.doJazz());        // will print "BaseMultiChild jazz!"
+        System.out.println(bazzInterface.doBazz());        // will print "BaseMultiChild Bazz!"
 
+        MyContainer<String> stringContainer = new MyContainer<>("Generic String");
+        MyContainer<Integer> integerContainer = new MyContainer<>(32);
+        MultiContainer<String,Integer> multiContainerSI = new MultiContainer<>("key",20);
+        GenericMethod<String> genericMethodS = new GenericMethod<>("generic method string");
+        GenericMethod<Integer> genericMethodI = new GenericMethod<>(20);
+        GenericMethod<Double> genericMethodD = new GenericMethod<>(40.78);
+        // MultiContainer<String,String> multiContainerS = new MultiContainer<>("key","value");
+        // Above results in a compiler error as value in multicontainer class extends Number
+        System.out.println(multiContainerSI.getKey() + " " + multiContainerSI.getValue());
+        System.out.println(stringContainer.getObject());
+        System.out.println(integerContainer.getObject());
+
+        genericMethodS.genericPrint(genericMethodS.getObject());
+        genericMethodI.genericPrint(genericMethodI.getObject());
+        genericMethodD.genericPrint(genericMethodD.getObject());
 
 
 
