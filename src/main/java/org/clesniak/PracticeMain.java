@@ -2,6 +2,7 @@ package org.clesniak;
 
 
 import org.clesniak.decision.OperatorsAndDecision;
+import org.clesniak.exceptions.BasicIOWithExceptionHandling;
 import org.clesniak.generics.GenericMethod;
 import org.clesniak.generics.MultiContainer;
 import org.clesniak.generics.MyContainer;
@@ -10,8 +11,10 @@ import org.clesniak.strings.StringsPractice;
 import org.clesniak.structure.*;
 import org.clesniak.variables.VariablesTypesAndScope;
 
+import java.nio.file.NoSuchFileException;
+
 public class PracticeMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         VariablesTypesAndScope p = new VariablesTypesAndScope();
         ArraysListsAndLoops f = new ArraysListsAndLoops();
         OperatorsAndDecision o = new OperatorsAndDecision();
@@ -83,21 +86,30 @@ public class PracticeMain {
         MyContainer<String> stringContainer = new MyContainer<>("Generic String");
         MyContainer<Integer> integerContainer = new MyContainer<>(32);
         MultiContainer<String,Integer> multiContainerSI = new MultiContainer<>("key",20);
-        GenericMethod<String> genericMethodS = new GenericMethod<>("generic method string");
-        GenericMethod<Integer> genericMethodI = new GenericMethod<>(20);
-        GenericMethod<Double> genericMethodD = new GenericMethod<>(40.78);
+
+
         // MultiContainer<String,String> multiContainerS = new MultiContainer<>("key","value");
         // Above results in a compiler error as value in multicontainer class extends Number
         System.out.println(multiContainerSI.getKey() + " " + multiContainerSI.getValue());
         System.out.println(stringContainer.getObject());
         System.out.println(integerContainer.getObject());
 
-        genericMethodS.genericPrint(genericMethodS.getObject());
-        genericMethodI.genericPrint(genericMethodI.getObject());
-        genericMethodD.genericPrint(genericMethodD.getObject());
+        System.out.println(GenericMethod.genericPrint("String"));
+        System.out.println(GenericMethod.genericPrint(15));
+        System.out.println(GenericMethod.genericPrint(15L));
 
 
+        // System.out.println(GenericMethod.genericNumber("String"));
+        // will not work as genericNumber is confined by Number
+        System.out.println(GenericMethod.genericNumber(15));
+        System.out.println(GenericMethod.genericNumber(15L));
 
+
+        //IO AND EXCEPTION HANDLING
+        //==========================
+        BasicIOWithExceptionHandling basicIO = new BasicIOWithExceptionHandling();
+        basicIO.readFileNotFound();
+        basicIO.readFileNotFound_RethrowException();
 
 
 

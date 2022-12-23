@@ -1,17 +1,12 @@
 package org.clesniak.generics;
 
-public class GenericMethod <T> {
-    private T obj;
+public  class GenericMethod {
 
-    public GenericMethod(T obj) {
-        this.obj = obj;
+    public static <T> String  genericPrint(T element) {
+        return (element.getClass().getName() + " = " + element);
     }
 
-    public T getObject() {
-        return obj;
-    }
-
-    public <T> void genericPrint(T element) {
-        System.out.println(element.getClass().getName() + " = " + element);
+    public static <T extends Number> String  genericNumber(T element) {
+        return (element.getClass().getName() + " = " + element);
     }
 }
